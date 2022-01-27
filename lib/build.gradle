@@ -1,0 +1,17 @@
+plugins {
+    id 'my-app.conventions'
+    id("io.micronaut.library") version "3.0.2"
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("lib.*")
+    }
+}
+
+dependencies {
+    api 'org.apache.commons:commons-compress:1.21'
+}
